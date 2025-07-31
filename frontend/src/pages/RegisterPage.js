@@ -12,7 +12,7 @@ const RegisterPage = () => {
     e.preventDefault();
     try {
       // 👇 Send `name` (not username)
-      await axios.post('http://localhost:5000/users/register', {
+      await axios.post('https://mern-todo-backend-otiw.onrender.com/users/register', {
         name,
         email,
         password

@@ -18,7 +18,7 @@ const TodoPage = () => {
 
   const fetchTasks = useCallback(async () => {
     try {
-      const { data } = await axios.get('http://localhost:5000/tasks', config);
+      const { data } = await axios.get('https://mern-todo-backend-otiw.onrender.com/tasks', config);
       setTasks(data.reverse());
     } catch (err) {
       console.error('Error fetching tasks:', err);
@@ -31,7 +31,7 @@ const TodoPage = () => {
 
   const addTask = async (title, dueDate) => {
     try {
-      await axios.post('http://localhost:5000/tasks', { title, dueDate }, config);
+      await axios.post('https://mern-todo-backend-otiw.onrender.com/tasks', { title, dueDate }, config);
       fetchTasks();
     } catch (err) {
       console.error('Error adding task:', err);
@@ -40,7 +40,7 @@ const TodoPage = () => {
 
   const completeTask = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/tasks/${id}`, { completed: true }, config);
+      await axios.put(`https://mern-todo-backend-otiw.onrender.com/tasks/${id}`, { completed: true }, config);
       fetchTasks();
     } catch (err) {
       console.error('Error completing task:', err);
@@ -49,7 +49,7 @@ const TodoPage = () => {
 
   const deleteTask = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/tasks/${id}`, config);
+      await axios.delete(`https://mern-todo-backend-otiw.onrender.com/tasks/${id}`, config);
       fetchTasks();
     } catch (err) {
       console.error('Error deleting task:', err);
@@ -58,7 +58,7 @@ const TodoPage = () => {
 
   const updateTask = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/tasks/${id}`, {
+      await axios.put(`https://mern-todo-backend-otiw.onrender.com/tasks/${id}`, {
         title: editTitle,
         dueDate: editDueDate
       }, config);

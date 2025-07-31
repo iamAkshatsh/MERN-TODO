@@ -10,7 +10,7 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post('http://localhost:5000/users/login', {
+      const { data } = await axios.post('https://mern-todo-backend-otiw.onrender.com/users/login', {
         email,
         password,
       });
